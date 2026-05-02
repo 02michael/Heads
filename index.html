@@ -5,5 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="first">
+        <div class="head-gear">
+          <div class="paddle"></div>
+          <div class="paddle reverse"></div>
+          <div class="button"></div>
+        </div>
+        <div class="head">
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="nose"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+        <div class="ear"></div>
+        <div class="ear right"></div>
+      </div>
+      <div class="second">
+        <div class="head">
+          <div class="face">
+            <div class="forehead"></div>
+            <div class="brows"></div>
+            <div class="eyes">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="mouth">
+              <div class="lips"></div>
+            </div>
+            <div class="nose"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg
+      style="visibility: hidden; position: absolute"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
 </html>
