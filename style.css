@@ -1,3 +1,7 @@
+:root {
+  --border: 1px solid black;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -13,27 +17,59 @@ body {
   align-items: flex-end;
 }
 
+.head {
+  border-radius: 10px;
+  border: var(--border);
+  height: 100px;
+  position: relative;
+}
+
+.ear {
+  height: 50px;
+  width: 40px;
+  border-radius: 50%;
+  border: var(--border);
+  position: absolute;
+  bottom: 15px;
+  left: -12px;
+  z-index: -1;
+  background: #3C4758;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: var(--border);
+    background: #4390A6;
+    position: absolute;
+  }
+
+  &.right {
+    transform: scaleX(-1);
+    left: unset;
+    right: -12px;
+  }
+}
+
 .first {
   position: relative;
 
   .head {
-    height: 100px;
     width: 120px;
-    border-radius: 10px;
     background: linear-gradient(#D3CECF 30%, #8B8084);
-    border: 1px solid black;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
   }
 
   .mouth {
     height: 30px;
     width: 100%;
     background: linear-gradient(#D3CECF 40%, #A79CA0);
-    border-top: 1px solid black;
+    border-top: var(--border);
   }
 
   .face {
@@ -48,8 +84,8 @@ body {
     height: 45px;
     width: 45px;
     border-radius: 50%;
-    border: 1px solid black;
-    background: white;
+    border: var(--border);
+    background: linear-gradient(#B0A7AA, white);
     position: relative;
     overflow: hidden;
 
@@ -73,7 +109,8 @@ body {
       position: absolute;
       top: -2px;
       left: 0;
-      border: 1px solid black;
+      border: var(--border);
+      animation: close-eyes 3s infinite ease-in-out;
     }
   }
 
@@ -85,7 +122,7 @@ body {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: var(--border);
     background: #395267;
     overflow: hidden;
 
@@ -93,7 +130,7 @@ body {
       content: "";
       width: 55px;
       height: 100%;
-      border: 1px solid black;
+      border: var(--border);
       border-radius: 50%;
       position: absolute;
       background: linear-gradient(#6FB0AA, #2F81A1);
@@ -103,39 +140,10 @@ body {
     }
   }
 
-  .ear {
-    height: 50px;
-    width: 40px;
-    border-radius: 50%;
-    border: 1px solid black;
-    position: absolute;
-    bottom: 15px;
-    left: -12px;
-    z-index: -1;
-    background: #3C4758;
-    overflow: hidden;
-
-    &:after {
-      content: "";
-      height: 35px;
-      width: 35px;
-      border-radius: 50%;
-      border: 1px solid black;
-      background: #4390A6;
-      position: absolute;
-    }
-
-    &.right {
-      transform: scaleX(-1);
-      left: unset;
-      right: -12px;
-    }
-  }
-
   .head-gear {
     height: 40px;
     width: 10px;
-    border: 1px solid black;
+    border: var(--border);
     border-bottom: none;
     margin: 0 auto;
     position: relative;
@@ -151,14 +159,18 @@ body {
       left: 50%;
       transform: translateX(-50%);
       background: #6A5E60;
-      border: 1px solid black;
+      border: var(--border);
       border-radius: 5px;
+    }
+    
+    .paddles {
+      animation: rotate-fan infinite linear 1s;
     }
 
     .paddle {
       position: absolute;
       filter: url('#goo');
-      right: 52px;
+      right: 54px;
       top: 10px;
 
       &:before, &:after {
@@ -179,8 +191,8 @@ body {
       }
 
       &.reverse {
-        right: -42px;
-        top: 18px;
+        right: -44px;
+        top: 15px;
         transform: scale(-1, -1);
       }
     }
@@ -189,22 +201,18 @@ body {
 
 .second {
   .head {
-    height: 100px;
-    width: 120px;
-    border-radius: 10px;
+    width: 130px;
     background: linear-gradient(#EB87B4 40%, #E44C8D);
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     
     &:before, &:after {
       content: "";
       height: 30px;
       width: 45px;
       border-radius: 15px;
-      border: 1px solid black;
+      border: var(--border);
       position: absolute;
       top: -15px;
       z-index: -1;
@@ -225,8 +233,8 @@ body {
   
   .face {
     height: 75px;
-    width: 95px;
-    border: 1px solid black;
+    width: 100px;
+    border: var(--border);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -241,7 +249,7 @@ body {
     position: absolute;
     height: 7px;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: var(--border);
     background: #73394F;
     z-index: 2;
   }
@@ -250,7 +258,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: -20px;
-    margin-top: -20px;
+    margin-top: -22px;
     gap: 25px;
     
     .eye {
@@ -258,7 +266,7 @@ body {
       width: 40px;
       border-radius: 50%;
       background: linear-gradient(#8B7D7D, white);
-      border: 1px solid black;
+      border: var(--border);
       position: relative;
       
       &:before, &:after {
@@ -285,6 +293,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    height: 40px;
     margin-top: -10px;
     z-index: 1;
     
@@ -293,8 +302,9 @@ body {
       height: 40px;
       width: 50px;
       border-radius: 15px;
-      border: 1px solid black;
+      border: var(--border);
       background: linear-gradient(#4B313E, #6E4154, #8A5A6D, #956E7B);
+      animation: raise-eyebrows 3s infinite;
     }
     
     &:before {
@@ -309,7 +319,7 @@ body {
   .mouth {
     height: 40px;
     width: 60px;
-    border: 1px solid black;
+    border: var(--border);
     border-bottom: none;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -320,10 +330,10 @@ body {
     z-index: 1;
     
     .lips {
-      height: 5px;
-      width: 30px;
+      height: 7px;
+      width: 40px;
       border-radius: 50%;
-      border-bottom: 1px solid black;
+      border-bottom: var(--border);
       position: relative;
       margin-top: 10px;
       
@@ -331,10 +341,10 @@ body {
         content: "";
         height: 5px;
         width: 0;
-        border-left: 1px solid black;
+        border-left: var(--border);
         position: absolute;
         transform: rotate(20deg);
-        top: 1px;
+        top: 2px;
       }
       
       &:after {
@@ -349,7 +359,7 @@ body {
     height: 20px;
     width: 30px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: var(--border);
     background: linear-gradient(#665FB4, #635398);
     top: 55%;
     transform: translateY(-50%);
@@ -360,7 +370,7 @@ body {
       content: "";
       height: 20px;
       width: 30px;
-      border: 1px solid black;
+      border: var(--border);
       border-radius: inherit;
       position: absolute;
       top: -8px;
