@@ -370,3 +370,113 @@ body {
     }
   }
 }
+
+.third, .fourth {
+  position: relative;
+  
+  .head {
+    width: 100px;
+    position: relative;
+    
+    &:before {
+      content: "";
+      height: 70px;
+      width: 70px;
+      border-radius: 10px;
+      border: var(--border);
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+    
+    .face {
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      height: 65px;
+      width: 70px;
+      background: linear-gradient(#D0684B, #EFBD77);
+      border-radius: 10px;
+      border: var(--border);
+      overflow: hidden;
+    }
+    
+    .eyes {
+      display: flex;
+      margin: 5px -10px 0;
+      justify-content: space-between;
+      .eye {
+        height: 35px;
+        width: 35px;
+        border: var(--border);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background: linear-gradient(#B0A7AA 60%, white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+          content: "";
+          height: 22px;
+          width: 25px;
+          border-radius: 50%;
+          background: black;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          height: 18px;
+          width: 35px;
+          top: 0;
+          background: linear-gradient(#EEB974, #E58553);
+          border-bottom: var(--border);
+        }
+      }
+    }
+    
+    .nose {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      border: var(--border);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(#AF4970, #5C3041);
+      overflow: hidden;
+      z-index: 10;
+      
+      &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        border: var(--border);
+        position: absolute;
+        top: -8px;
+        background: linear-gradient(#ED7AA8, #C6497D);
+      }
+    }
+  }
+  
+  .ear {
+    left: -15px;
+    background: #7F3854;
+
+    &:after {
+      background: linear-gradient(#E884AF, #C3447A);
+    }
+
+    &.right {
+      left: unset;
+      right: -15px;
+    }
+  }
+}
